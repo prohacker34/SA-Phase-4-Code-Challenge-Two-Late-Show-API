@@ -32,7 +32,7 @@ class Episode(db.Model,SerializerMixin):
      id=db.Column(db.Integer, primary_key=True)
      date=db.Column(db.Integer, nullable=False)
      number=db.Column(db.Integer, nullable=False)
-     appearance=db.relationship('Appearance', back_populates='episode')
+     appearance=db.relationship('Appearance', back_populates='episode',cascade='delete all appearances')
 
 class Appearance (db.Model,SerializerMixin):
       __tablename__='appearances'
